@@ -52,4 +52,7 @@ RUN a2dissite 000-default.conf && a2ensite custom-vhost.conf && a2enmod rewrite
 # Change uid and gid of apache to docker user uid/gid
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
+RUN pecl install mongodb && docker-php-ext-enable mongodb
+RUN composer global require "hirak/prestissimo:^0.3"
+
 WORKDIR /var/www/html 
