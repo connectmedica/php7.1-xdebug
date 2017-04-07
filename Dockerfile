@@ -46,7 +46,7 @@ RUN curl -fsSL 'https://xdebug.org/files/xdebug-2.5.1.tgz' -o xdebug.tar.gz \
     && docker-php-ext-enable xdebug
 
 # Put apache config
-COPY build/apache-vhost.conf /etc/apache2/sites-available/custom-vhost.conf
+COPY apache-vhost.conf /etc/apache2/sites-available/custom-vhost.conf
 RUN a2dissite 000-default.conf && a2ensite custom-vhost.conf && a2enmod rewrite
 
 # Change uid and gid of apache to docker user uid/gid
