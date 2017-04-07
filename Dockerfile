@@ -10,6 +10,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
       libmysqlclient-dev \
       ruby-full \
       nodejs \
+      git \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-install \
