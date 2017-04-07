@@ -23,7 +23,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
       pdo_pgsql \
       pgsql \
       zip \
-      opcache
+      opcache \
+      bcmath
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
